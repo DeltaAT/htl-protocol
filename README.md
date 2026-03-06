@@ -47,6 +47,5 @@ Alle Werte haben Standardwerte Also muss nicht alles davon gesetzt werden.
 ## Build
 
 ```powershell
-cd C:\Projects\typst-templates
 typst compile main.typ main.pdf
 ```
