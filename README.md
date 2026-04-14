@@ -28,7 +28,7 @@ Dann wird es in deinem File so eingebunden:
 
 Danach kann normal weitergeschrieben werden
 
-> Global Package kommt bald
+> Global Package kommt bald vielleicht
 
 1. Folgende Parameter für das Template:
    1. `author`: Full Name
