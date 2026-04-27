@@ -1,4 +1,4 @@
-#import "@local/HTLium:1.1.1": template
+#import "@preview/htlium:1.1.1": template
 
 #show: body => template(body)
 
