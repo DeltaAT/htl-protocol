@@ -5,7 +5,8 @@
 
 #import "@preview/icu-datetime:0.2.2"
 
-#import "src/titlepage.typ": titlepage
+#import "src/titlepage.typ": *
+#import "src/boxes.typ": *
 
 #let template(
   body,
