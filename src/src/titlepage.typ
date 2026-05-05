@@ -25,54 +25,59 @@
         #line(length: 100%, stroke: 1.5pt)
     ]
 
-    text(weight: "semibold", size: 20pt)[#task-title]
-    v(-0.2cm)
-    text(size: 16pt)[#task-content]
+    if task-title != "" {
+        text(weight: "semibold", size: 20pt)[#task-title]
+    }
+    if task-content != "" {
+        v(-0.2cm)
+        text(size: 16pt)[#task-content]
+    }
     v(0.7cm)
 
-    align(center)[
-        #text(weight: "bold", size: 14pt)[
-            #if lang == "de" [
-                Verfasser:#linebreak()
-            ] else [
-                Author:#linebreak()
+    if author != "" {
+        align(center)[
+            #text(weight: "bold", size: 14pt)[
+                #if lang == "de" [
+                    Verfasser:#linebreak()
+                ] else [
+                    Author:#linebreak()
+                ]
             ]
+            #text(size: 25pt)[#author]
         ]
-        #text(size: 25pt)[#author]
-    ]
+    }
 
     grid(
         columns: 2*(auto,),
-        rows: 3*(auto,),
         gutter: 10pt,
-        [
+        if class != "" [
             #if lang == "de" [
                 *Klasse:*
             ] else [
                 *Class:*
             ]
         ],
-        [
+        if class != "" [
             #class
         ],
-        [
+        if school-year != "" [
             #if lang == "de" [
                 *Schuljahr:*
             ] else [
                 *School Year:*
             ]
         ],
-        [
+        if school-year != "" [
             #school-year
         ],
-        [
+        if date != "" [
             #if lang == "de" [
                 *Datum:*
             ] else [
                 *Date:*
             ]
         ],
-        [
+        if date != "" [
             #date
         ]
     )
@@ -85,46 +90,45 @@
 
     grid(
         columns: 2*(auto,),
-        rows: 4*(auto,),
         gutter: 10pt,
-        [
+        if subject != "" [
             #if lang == "de" [
                 *Fach:*
             ] else [
                 *Subject:*
             ]
         ],
-        [
+        if subject != "" [
             #subject
         ],
-        [
+        if school != "" [
             #if lang == "de" [
                 *Schule:*
             ] else [
                 *School:*
             ]
         ],
-        [
+        if school != "" [
             #school
         ],
-        [
+        if department != "" [
             #if lang == "de" [
                 *Abteilung:*
             ] else [
                 *Department:*
             ]
         ],
-        [
+        if department != "" [
             #department
         ],
-        [
+        if teachers != () [
             #if lang == "de" [
                 *Lehrer:*
             ] else [
                 *Teachers:*
             ]
         ],
-        [
+        if teachers != () [
             #teachers.join(",\n")
         ]
     )
