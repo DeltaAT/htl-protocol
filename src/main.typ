@@ -10,6 +10,7 @@
 
 #let template(
   body,
+  lang: "de",
   author: "Your Name",
   class-long: "Protokoll",
   logo: image,
@@ -101,11 +102,12 @@
   set text(
     font: "Arial",
     size: 12pt,
-    lang: "de",
+    lang: lang,
   )
   
   titlepage(
     title,
+    lang,
     subtitle,
     task-title,
     task-content,
@@ -129,7 +131,13 @@
       it.indented(none, it.prefix() + ": " + it.inner())
     }
     outline(
-      title: [Abbildungsverzeichnis],
+      title: [
+        #if lang == "de" [
+          Abbildungsverzeichnis
+        ] else [
+          List of Figures
+        ]
+        ],
       target: figure.where(kind: image),
     )
   }
@@ -138,7 +146,13 @@
       it.indented(none, it.prefix() + ": " + it.inner())
     }
     outline(
-      title: [Tabellenverzeichnis],
+      title: [
+        #if lang == "de" [
+          Tabellenverzeichnis
+        ] else [
+          List of Tables
+        ]
+      ],
       target: figure.where(kind: table),
     )
   }
@@ -150,7 +164,13 @@
   
   if do-bib {
     bibliography(bib-src, style: "ieee",
-    title: [Literaturverzeichnis])
+    title: [
+      #if lang == "de" [
+        Literaturverzeichnis
+      ] else [
+        List of References
+      ]
+    ])
   }
 }
 

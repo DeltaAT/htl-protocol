@@ -49,11 +49,18 @@
 
 #let warning-box(
   ..box-content,
+  lang: "de",
 ) = {
   custom-box(
     icon("exclamation-triangle", solid: false, color: orange.darken(30%)),
     orange,
-    "Warnung",
+    [
+      #if lang == "de" [
+        Achtung
+      ] else [
+       Warning
+      ]
+    ],
     ..box-content,
   )
 }
@@ -61,11 +68,18 @@
 
 #let note-box(
   ..box-content,
+  lang: "de",
 ) = {
   custom-box(
     icon("clipboard", solid: false, color: yellow.darken(50%)),
     yellow.darken(10%),
-    "Notiz",
+    [
+      #if lang == "de" [
+        Hinweis
+      ] else [
+        Note
+      ]
+     ],
     ..box-content,
   )
 }
@@ -73,11 +87,18 @@
 
 #let tip-box(
   ..box-content,
+    lang: "de",
 ) = {
   custom-box(
     icon("light-bulb", solid: false, color: green.darken(30%)),
     green,
-    "Tipp",
+    [
+      #if lang == "de" [
+        Tipp
+      ] else [
+        Tip
+      ]
+    ],
     ..box-content,
   )
 }
@@ -85,11 +106,18 @@
 
 #let important-box(
   ..box-content,
+    lang: "de",
 ) = {
   custom-box(
     icon("megaphone", solid: false, color: red.darken(30%)),
     red,
-    "Wichtig",
+    [
+      #if lang == "de" [
+        Wichtig
+      ] else [
+        Important
+      ]
+    ],
     ..box-content,
   )
 }
