@@ -1,6 +1,7 @@
 
 #let titlepage(
     title,
+    lang,
     subtitle,
     task-title,
     task-content,
@@ -30,7 +31,13 @@
     v(0.7cm)
 
     align(center)[
-        #text(weight: "bold", size: 14pt)[Verfasser:#linebreak()]
+        #text(weight: "bold", size: 14pt)[
+            #if lang == "de" [
+                Verfasser:#linebreak()
+            ] else [
+                Author:#linebreak()
+            ]
+        ]
         #text(size: 25pt)[#author]
     ]
 
@@ -39,19 +46,31 @@
         rows: 3*(auto,),
         gutter: 10pt,
         [
-            *Klasse:*
+            #if lang == "de" [
+                *Klasse:*
+            ] else [
+                *Class:*
+            ]
         ],
         [
             #class
         ],
         [
-            *Schuljahr:*
+            #if lang == "de" [
+                *Schuljahr:*
+            ] else [
+                *School Year:*
+            ]
         ],
         [
             #school-year
         ],
         [
-            *Datum:*
+            #if lang == "de" [
+                *Datum:*
+            ] else [
+                *Date:*
+            ]
         ],
         [
             #date
@@ -69,25 +88,41 @@
         rows: 4*(auto,),
         gutter: 10pt,
         [
-            *Fach:*
+            #if lang == "de" [
+                *Fach:*
+            ] else [
+                *Subject:*
+            ]
         ],
         [
             #subject
         ],
         [
-            *Schule:*
+            #if lang == "de" [
+                *Schule:*
+            ] else [
+                *School:*
+            ]
         ],
         [
             #school
         ],
         [
-            *Abteilung:*
+            #if lang == "de" [
+                *Abteilung:*
+            ] else [
+                *Department:*
+            ]
         ],
         [
             #department
         ],
         [
-            *Lehrer:*
+            #if lang == "de" [
+                *Lehrer:*
+            ] else [
+                *Teachers:*
+            ]
         ],
         [
             #teachers.join(",\n")
