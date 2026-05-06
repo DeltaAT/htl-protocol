@@ -2,6 +2,7 @@
 #let titlepage(
     title,
     lang,
+    color-scheme,
     subtitle,
     task-title,
     task-content,
@@ -134,10 +135,10 @@
     )
 
     // Rectangles and Things for Mainpage design
-    let dark = rgb(40, 9, 5)
-    let primary = rgb(116, 10, 3)
-    let secondary = rgb(195, 17, 12)
-    let light = rgb(230, 80, 27)
+    let dark = color-scheme.darken(80%)
+    let primary = color-scheme.darken(50%)
+    let secondary = color-scheme.darken(20%)
+    let light = color-scheme.lighten(60%)
 
     let rect_temp(
       placement: top + left,

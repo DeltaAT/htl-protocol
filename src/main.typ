@@ -11,6 +11,7 @@
 #let template(
   body,
   lang: "de",
+  color-scheme: red,
   author: "Your Name",
   class-long: "Protokoll",
   logo: image,
@@ -31,12 +32,12 @@
   bib-src: "refs.bib",
   fancy-design: true
 ) = {
-  let htlorange = rgb(255, 108, 76)
+  let title-color = color-scheme.darken(20%)
   
   set heading(
     numbering: "1.",
   )
-  show heading: set text(fill: htlorange)
+  show heading: set text(fill: title-color)
   
   set page(
     paper: "a4",
@@ -58,7 +59,7 @@
               rect(
                 width: 0.5cm,
                 height: 31cm,
-                fill: rgb(195, 17, 12)
+                fill: color-scheme.darken(20%),
               )
             )
           }
@@ -108,6 +109,7 @@
   titlepage(
     title,
     lang,
+    color-scheme,
     subtitle,
     task-title,
     task-content,
