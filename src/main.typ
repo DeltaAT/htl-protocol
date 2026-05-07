@@ -7,8 +7,8 @@
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 
-#import "src/titlepage.typ": *
-#import "src/boxes.typ": *
+#import "lib/titlepage.typ": *
+#import "lib/boxes.typ": *
 
 #let template(
   body,
