@@ -4,6 +4,8 @@
 */
 
 #import "@preview/icu-datetime:0.2.2"
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
 
 #import "src/titlepage.typ": *
 #import "src/boxes.typ": *
@@ -33,7 +35,13 @@
   fancy-design: true
 ) = {
   let title-color = color-scheme.darken(20%)
-  
+
+  import "@preview/codly:1.3.0": *
+  import "@preview/codly-languages:0.1.1": *
+  show: codly-init.with()
+  codly(languages: codly-languages)
+  codly-enable()
+
   set heading(
     numbering: "1.",
   )
