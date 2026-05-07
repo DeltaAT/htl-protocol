@@ -82,3 +82,13 @@ Das ist ein Zitat aus einem Buch @harry-potter.
 #important-box([])
 
 #pagebreak()
+
+= Codeblock
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+#pagebreak()
