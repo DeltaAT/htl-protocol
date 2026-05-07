@@ -1,6 +1,6 @@
 [package]
 name = "htlium"
-version = "1.2.0"
+version = "1.6.0"
 entrypoint = "src/main.typ"
 authors = ["Elias Pöschl <@DeltaAT>"]
 license = "MIT"
