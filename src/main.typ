@@ -43,7 +43,7 @@
   codly-enable()
 
   set heading(
-    numbering: "1.",
+    numbering: "1.1",
   )
   show heading: set text(fill: title-color)
   
@@ -113,7 +113,11 @@
     size: 12pt,
     lang: lang,
   )
-  
+
+  set cite(
+    style: "ieee"
+  )
+
   titlepage(
     title,
     lang,
