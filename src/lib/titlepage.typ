@@ -98,6 +98,7 @@
 
     align(center)[
       #if logo != none {
+        show image: set image(width: 10cm)
         logo
       }
     ]
