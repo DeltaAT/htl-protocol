@@ -32,8 +32,10 @@
   do-lot: true,
   do-bib: true,
   bib-src: "refs.bib",
-  fancy-design: true
-) = {
+  fancy-design: true,
+  before-logo-info: (),
+  after-logo-info: (),
+  ) = {
   let title-color = color-scheme.darken(20%)
 
   import "@preview/codly:1.3.0": *

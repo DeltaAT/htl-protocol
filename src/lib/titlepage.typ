@@ -48,39 +48,50 @@
         ]
     }
 
+    let first-grid = ()
+    if class != "" {
+        first-grid.push(
+            (
+              if lang == "de" [
+                *Klasse:*
+              ] else [
+                *Class:*
+              ],
+              class,
+            )
+        )
+    }
+    if school-year != "" {
+        first-grid.push(
+            (
+              if lang == "de" [
+                *Schuljahr:*
+              ] else [
+                *School Year:*
+              ],
+              school-year,
+            )
+        )
+    }
+    if date != "" {
+        first-grid.push(
+            (
+              if lang == "de" [
+                *Datum:*
+              ] else [
+                *Date:*
+              ],
+              date,
+            )
+        )
+    }
+
     grid(
         columns: 2*(auto,),
         gutter: 10pt,
-        if class != "" [
-            #if lang == "de" [
-                *Klasse:*
-            ] else [
-                *Class:*
-            ]
-        ],
-        if class != "" [
-            #class
-        ],
-        if school-year != "" [
-            #if lang == "de" [
-                *Schuljahr:*
-            ] else [
-                *School Year:*
-            ]
-        ],
-        if school-year != "" [
-            #school-year
-        ],
-        if date != "" [
-            #if lang == "de" [
-                *Datum:*
-            ] else [
-                *Date:*
-            ]
-        ],
-        if date != "" [
-            #date
-        ]
+        ..for cell in first-grid {
+            (cell)
+        }
     )
 
     align(center)[
@@ -89,49 +100,62 @@
       }
     ]
 
+    let second-grid = ()
+    if subject != "" {
+        second-grid.push(
+            (
+              if lang == "de" [
+                *Fach:*
+              ] else [
+                *Subject:*
+              ],
+              subject,
+            )
+        )
+    }
+    if school != "" {
+        second-grid.push(
+            (
+              if lang == "de" [
+                *Schule:*
+              ] else [
+                *School:*
+              ],
+              school,
+            )
+        )
+    }
+    if department != "" {
+        second-grid.push(
+            (
+              if lang == "de" [
+                *Abteilung:*
+              ] else [
+                *Department:*
+              ],
+              department,
+            )
+        )
+    }
+    if teachers != () {
+        second-grid.push(
+            (
+              if lang == "de" [
+                *Lehrer:*
+              ] else [
+                *Teachers:*
+              ],
+              teachers.join(",\n"),
+            )
+        )
+    }
+
     grid(
         columns: 2*(auto,),
         gutter: 10pt,
-        if subject != "" [
-            #if lang == "de" [
-                *Fach:*
-            ] else [
-                *Subject:*
-            ]
-        ],
-        if subject != "" [
-            #subject
-        ],
-        if school != "" [
-            #if lang == "de" [
-                *Schule:*
-            ] else [
-                *School:*
-            ]
-        ],
-        if school != "" [
-            #school
-        ],
-        if department != "" [
-            #if lang == "de" [
-                *Abteilung:*
-            ] else [
-                *Department:*
-            ]
-        ],
-        if department != "" [
-            #department
-        ],
-        if teachers != () [
-            #if lang == "de" [
-                *Lehrer:*
-            ] else [
-                *Teachers:*
-            ]
-        ],
-        if teachers != () [
-            #teachers.join(",\n")
-        ]
+        ..for cell in second-grid {
+            (cell)
+        }
     )
 
     // Rectangles and Things for Mainpage design
