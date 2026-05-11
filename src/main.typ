@@ -47,9 +47,9 @@
   set heading(
     numbering: "1.1",
   )
-  if fancy-design {
-    show heading: set text(fill: title-color)
-  }
+  //if fancy-design {
+  show heading: set text(fill: title-color)
+  //}
   
   set page(
     paper: "a4",
