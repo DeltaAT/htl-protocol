@@ -16,6 +16,8 @@
     department,
     teachers,
     fancy-design,
+    before-logo-info,
+    after-logo-info
 ) = {
     v(2cm)
 
@@ -48,7 +50,7 @@
         ]
     }
 
-    let first-grid = ()
+    let first-grid = before-logo-info
     if class != "" {
         first-grid.push(
             (
@@ -100,7 +102,7 @@
       }
     ]
 
-    let second-grid = ()
+    let second-grid = after-logo-info
     if subject != "" {
         second-grid.push(
             (
@@ -214,6 +216,5 @@
       rect_temp(placement: bottom, fill: dark, rotation: -3deg, width: 15cm, height: 5cm, dy: 5cm, dx: -6.35cm)
       rect_temp(placement: bottom, fill: dark, rotation: 3deg, width: 15cm, height: 5cm, dy: 5cm, dx: 8.3cm)
     }
-
     pagebreak()
 }

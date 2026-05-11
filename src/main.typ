@@ -47,7 +47,9 @@
   set heading(
     numbering: "1.1",
   )
-  show heading: set text(fill: title-color)
+  if fancy-design {
+    show heading: set text(fill: title-color)
+  }
   
   set page(
     paper: "a4",
@@ -136,7 +138,9 @@
     school,
     department,
     teachers,
-    fancy-design
+    fancy-design,
+    before-logo-info,
+    after-logo-info
   )
   
   outline()
