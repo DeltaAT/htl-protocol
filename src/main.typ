@@ -32,8 +32,10 @@
   do-lot: true,
   do-bib: true,
   bib-src: "refs.bib",
-  fancy-design: true
-) = {
+  fancy-design: true,
+  before-logo-info: (),
+  after-logo-info: (),
+  ) = {
   let title-color = color-scheme.darken(20%)
 
   import "@preview/codly:1.3.0": *
@@ -45,7 +47,9 @@
   set heading(
     numbering: "1.1",
   )
-  show heading: set text(fill: title-color)
+  if fancy-design {
+    show heading: set text(fill: title-color)
+  }
   
   set page(
     paper: "a4",
@@ -134,7 +138,9 @@
     school,
     department,
     teachers,
-    fancy-design
+    fancy-design,
+    before-logo-info,
+    after-logo-info
   )
   
   outline()
